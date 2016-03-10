@@ -8,10 +8,11 @@ class Publisher(models.Model):
     website = models.URLField(null=True, blank=True)
     contact_email = models.EmailField(null=True, blank=True)
 
-    test = models.ManyToManyField(
+    test = models.ForeignKey(
         'self',
         blank=True,
-        related_name='related_test_models'
+        null=True,
+        related_name='related_publisher_test_models'
     )
 
     def __str__(self):
@@ -26,7 +27,8 @@ class Author(models.Model):
     test = models.ManyToManyField(
         'self',
         blank=True,
-        related_name='related_test_models'
+        null=True,
+        related_name='related__author_test_models'
     )
 
     def __str__(self):
