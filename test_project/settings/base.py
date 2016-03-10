@@ -32,11 +32,12 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 def get_databases(base_dir):
     return {
         'default': {
-            'ENGINE': os.environ.get('DJANGO_DB_ENGINE',
-                'django.db.backends.sqlite3'),
-            'NAME': os.environ.get('DJANGO_DB_NAME',
-                os.path.join(base_dir, 'db.sqlite3')),
-            'USER': os.environ.get('DJANGO_DB_USER', ''),
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'djangoautocompletelight',
+            'USER': 'admin',
+            'PASSWORD': 'admin',
+            'HOST': 'localhost',
+            'PORT': '',
         }
     }
 
@@ -78,6 +79,8 @@ INSTALLED_APPS = [
     'genericm2m',
     'tagging',
     'taggit',
+
+    'possiblebug',
 ]
 
 if django.VERSION < (1, 10):

@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^select2_tagging/', include('select2_tagging.urls')),
 
     url(r'^select2_outside_admin', include('select2_outside_admin.urls')),
+
+    url(r'^possiblebug/', include('possiblebug.urls', namespace="possiblebug")),
 ]
 
 if django.VERSION < (1, 10):
